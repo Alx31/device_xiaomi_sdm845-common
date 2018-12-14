@@ -1,4 +1,5 @@
 on init
+    start jamesdsp
     mount none /dev/null /vendor/bin/cnss_diag bind
     mount none /dev/null /vendor/bin/ipacm-diag bind
     mount none /sbin/chargeonlymode /sbin/charger bind
@@ -64,3 +65,8 @@ on property:sys.boot_completed=1
     write /sys/block/dm-1/queue/read_ahead_kb 128
     write /sys/block/dm-2/queue/read_ahead_kb 128
     write /sys/block/dm-3/queue/read_ahead_kb 128
+
+service jamesdsp /system/bin/init.jamesdsp.sh
+    user root
+    oneshot
+    disabled

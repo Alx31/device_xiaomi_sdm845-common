@@ -34,7 +34,8 @@ PRODUCT_COPY_FILES += \
 
 # Common init scripts
 PRODUCT_PACKAGES += \
-    init.qcom.rc
+    init.qcom.rc \
+    init.jamesdsp.sh
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
